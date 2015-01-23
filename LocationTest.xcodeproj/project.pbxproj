@@ -16,6 +16,7 @@
 		CD0968D31A72AE48005305E5 /* LocationTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0968D21A72AE48005305E5 /* LocationTestTests.m */; };
 		CD0968DE1A72B543005305E5 /* LocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0968DD1A72B543005305E5 /* LocationManagerDelegate.m */; };
 		CD0968DF1A72B543005305E5 /* LocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0968DD1A72B543005305E5 /* LocationManagerDelegate.m */; };
+		CD47D2461A72BFFB00E59BB4 /* ViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47D2451A72BFFB00E59BB4 /* ViewControllerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		CD0968D21A72AE48005305E5 /* LocationTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationTestTests.m; sourceTree = "<group>"; };
 		CD0968DC1A72B543005305E5 /* LocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManagerDelegate.h; sourceTree = "<group>"; };
 		CD0968DD1A72B543005305E5 /* LocationManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManagerDelegate.m; sourceTree = "<group>"; };
+		CD47D2451A72BFFB00E59BB4 /* ViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				CD0968D21A72AE48005305E5 /* LocationTestTests.m */,
+				CD47D2451A72BFFB00E59BB4 /* ViewControllerTests.m */,
 				CD0968D01A72AE48005305E5 /* Supporting Files */,
 			);
 			path = LocationTestTests;
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD47D2461A72BFFB00E59BB4 /* ViewControllerTests.m in Sources */,
 				CD0968D31A72AE48005305E5 /* LocationTestTests.m in Sources */,
 				CD0968DF1A72B543005305E5 /* LocationManagerDelegate.m in Sources */,
 			);
@@ -420,6 +424,7 @@
 				CD0968D81A72AE48005305E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD0968D91A72AE48005305E5 /* Build configuration list for PBXNativeTarget "LocationTestTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +433,7 @@
 				CD0968DB1A72AE48005305E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
