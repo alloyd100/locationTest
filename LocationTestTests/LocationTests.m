@@ -1,6 +1,6 @@
 //
-//  LocationTestTests.m
-//  LocationTestTests
+//  LocationTests.m
+//  LocationTest
 //
 //  Created by Andrew Lloyd on 23/01/2015.
 //  Copyright (c) 2015 Andrew Lloyd. All rights reserved.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface LocationTestTests : XCTestCase
+@interface LocationTests : XCTestCase
 
 @end
 
-@implementation LocationTestTests
+@implementation LocationTests
 
 - (void)setUp {
     [super setUp];
@@ -25,16 +25,14 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testFindingLocation
+{
+    
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testReturnsMostAccurateLocation
+{
+    
 }
 
 @end
