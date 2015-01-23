@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZJ-Lg-CdR">
+                                <rect key="frame" x="176" y="263" width="248" height="141"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="248" id="WJH-Dw-htG"/>
+                                    <constraint firstAttribute="width" constant="248" id="fwX-LD-YH9"/>
+                                    <constraint firstAttribute="height" constant="141" id="tck-cv-zJj"/>
+                                    <constraint firstAttribute="height" constant="141" id="vsl-hi-OzY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="30"/>
+                                <color key="tintColor" red="0.01176470588" green="0.35686274509999999" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Find Me!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WJH-Dw-htG"/>
+                                        <exclude reference="vsl-hi-OzY"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="ukf-E8-RnD">
+                                <rect key="frame" x="176" y="28" width="248" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="123" id="cVz-t1-W4A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="otl-Ka-4JO">
+                                <rect key="frame" x="176" y="127" width="248" height="128"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QsM-ca-MbZ">
+                                <rect key="frame" x="290" y="181" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="centerX" secondItem="QsM-ca-MbZ" secondAttribute="centerX" id="243-xO-VGb"/>
+                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="trailing" secondItem="ukf-E8-RnD" secondAttribute="trailing" id="4zX-eh-04z"/>
+                            <constraint firstItem="otl-Ka-4JO" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="107" id="CvN-uj-5Gu"/>
+                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="leading" secondItem="ukf-E8-RnD" secondAttribute="leading" id="IHQ-Kj-aCB"/>
+                            <constraint firstItem="ukf-E8-RnD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="MLT-vb-Yng"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="LZJ-Lg-CdR" secondAttribute="bottom" constant="196" id="aRn-9J-0kM"/>
+                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ac2-1s-uUs"/>
+                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="top" secondItem="otl-Ka-4JO" secondAttribute="bottom" constant="8" id="ca3-HZ-sLQ"/>
+                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="trailing" secondItem="otl-Ka-4JO" secondAttribute="trailing" id="eF4-q2-sJZ"/>
+                            <constraint firstItem="QsM-ca-MbZ" firstAttribute="centerY" secondItem="otl-Ka-4JO" secondAttribute="centerY" id="esG-J0-vQG"/>
+                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="top" secondItem="otl-Ka-4JO" secondAttribute="bottom" constant="8" symbolic="YES" id="lDt-7k-abf"/>
+                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="leading" secondItem="otl-Ka-4JO" secondAttribute="leading" id="y7l-wB-Dlz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countryLabel" destination="ukf-E8-RnD" id="oot-3d-c85"/>
+                        <outlet property="flagImageView" destination="otl-Ka-4JO" id="c3U-1b-hLC"/>
+                        <outlet property="loadingIndicator" destination="QsM-ca-MbZ" id="p3T-pH-Lcd"/>
+                        <outlet property="searchButton" destination="LZJ-Lg-CdR" id="TrN-xE-Ql4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="359" y="355"/>
+        </scene>
+    </scenes>
+</document>
