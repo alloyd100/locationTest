@@ -12,8 +12,7 @@
 @interface LocationManager ()
 
 @property NSString *countryName;
-
-@property (nonatomic, weak) CLLocation *location;
+@property (nonatomic, copy) CurrentLocationCompletionHandler completionHandler;
 
 @end
 
@@ -31,56 +30,85 @@
 
 - (void)startUpdatingLocation
 {
-    if (nil == _locationManager)
-    {
-        _locationManager = [[CLLocationManager alloc] init];
-        _locationManager.delegate = self;
-        _locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
-        _locationManager.distanceFilter = kCLDistanceFilterNone;
-        _locationManager.pausesLocationUpdatesAutomatically = FALSE;
+    if ([CLLocationManager locationServicesEnabled]) {
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        
+        // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+        
+        [self.locationManager startUpdatingLocation];
     }
-
-    [_locationManager startUpdatingLocation];
+    
 }
 
 - (void)stopUpdatingLocation
 {
-    [_locationManager stopUpdatingLocation];
-    _locationManager = nil;
+    [self.locationManager stopUpdatingLocation];
 }
 
--(NSString*)countryLocation
+-(NSString*)stringForLocationCountry
 {
-    [self fetchCountryNameForLocation:self.location];
     return self.countryName;
 }
 
--(void)fetchCountryNameForLocation:(CLLocation*)location
-{
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    
-    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-        if (error) {
-            NSLog(@"Error %@", error.localizedDescription);
-        } else {
-            CLPlacemark *placemark = [placemarks lastObject];
-            self.countryName = placemark.country;
-        }
-    }];
-}
-
+//-(void)fetchCountryNameForLocation:(CLLocation*)location withCompletionHandler:(CurrentLocationCompletionHandler*)completionHandler
+//{
+//    self.completionHandler = completionHandler;
+//    
+//    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+//    
+//    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+//        if (error) {
+//            NSLog(@"Error %@", error.localizedDescription);
+//        } else {
+//            CLPlacemark *placemark = [placemarks lastObject];
+//            self.countryName = placemark.country;
+//        }
+//    }];
+//}
 # pragma mark CLLocationManager Delegate Methods
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations
 {
-    self.location = [locations lastObject];
     [self stopUpdatingLocation];
+    
+    CLLocation *newLocation = [locations lastObject];
+    
+    if (self.completionHandler)
+    {
+        self.completionHandler(TRUE, newLocation);
+    }
+    
+    //[self fetchCountryNameForLocation:self.location];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"Failed to update location with error: %@", error.localizedDescription);
+    self.completionHandler(FALSE, nil);
     [self stopUpdatingLocation];
 }
 
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (status == kCLAuthorizationStatusDenied)
+    {
+        [self displayLocationServicesDisabledError];
+        
+        [self stopUpdatingLocation];
+    }
+    else if (status == kCLAuthorizationStatusNotDetermined)
+    {
+        // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+        {
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+    }
+}
+        
 @end

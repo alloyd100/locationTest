@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-#import <Foundation/Foundation.h>
+
+typedef void (^CurrentLocationCompletionHandler)(BOOL success, CLLocation *location);
 
 @interface LocationManager : NSObject <CLLocationManagerDelegate>
 
-@property (nonatomic) CLLocationManager *locationManager;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property CLLocation *location;
 
 - (void)displayLocationServicesDisabledError;
+- (NSString*)stringForLocationCountry;
 - (void)startUpdatingLocation;
-- (NSString*)countryLocation;
 
 @end
