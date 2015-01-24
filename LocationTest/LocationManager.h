@@ -1,5 +1,5 @@
 //
-//  LocationManagerDelegate.h
+//  LocationManager.h
 //  LocationTest
 //
 //  Created by Andrew Lloyd on 23/01/2015.
@@ -10,10 +10,12 @@
 #import <MapKit/MapKit.h>
 #import <Foundation/Foundation.h>
 
-@interface LocationManagerDelegate : NSObject <CLLocationManagerDelegate>
+@interface LocationManager : NSObject <CLLocationManagerDelegate>
 
 @property (nonatomic) CLLocationManager *locationManager;
 
--(void)displayLocationServicesDisabledError;
+- (void)displayLocationServicesDisabledError;
+- (void)startUpdatingLocation;
+- (NSString*)countryLocation;
 
 @end

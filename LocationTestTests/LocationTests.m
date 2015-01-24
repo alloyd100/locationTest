@@ -30,7 +30,12 @@
     
 }
 
-- (void)testReturnsMostAccurateLocation
+- (void)testUpdateLocation
+{
+    
+}
+
+-(void)testLocationNameRetrieved
 {
     
 }

@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *flagImageView;
 @property (weak, nonatomic) IBOutlet UILabel *countryLabel;
 
+- (IBAction)findMeTouchUpInside:(id)sender;
+
 @end
 
