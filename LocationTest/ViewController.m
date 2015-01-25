@@ -13,12 +13,12 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 @property (strong, nonatomic) LocationManager *locationManager;
 
 @end
 
 @implementation ViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,6 +42,7 @@
         }
         else
         {
+            //failed - stop spinner
             [self.loadingIndicator stopAnimating];
             [self.loadingIndicator setHidden:YES];
         }

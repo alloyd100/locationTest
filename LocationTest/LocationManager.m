@@ -21,6 +21,16 @@
 
 @implementation LocationManager
 
+-(NSString*)stringForLocationCountry
+{
+    return self.countryName;
+}
+
+-(NSString*)stringForISOCode
+{
+    return self.isoCountryCode.lowercaseString;
+}
+
 -(void)displayLocationServicesError:(NSString*)error
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services Unavailable"
@@ -48,16 +58,6 @@
 {
     [self.locationManager stopUpdatingLocation];
     self.locationManager = nil;
-}
-
--(NSString*)stringForLocationCountry
-{
-    return self.countryName;
-}
-
--(NSString*)stringForISOCode
-{
-    return self.isoCountryCode.lowercaseString;
 }
 
 -(void)fetchCountryNameForLocation:(CLLocation*)location

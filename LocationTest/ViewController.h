@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *countryLabel;
 @property (weak, nonatomic) IBOutlet UIButton *TwitterButton;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
+
 - (IBAction)findMeTouchUpInside:(id)sender;
 - (IBAction)tweetThis:(id)sender;
 
