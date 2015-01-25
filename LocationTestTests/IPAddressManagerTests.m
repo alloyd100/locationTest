@@ -26,11 +26,6 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
-
 - (void)testPerformanceExample
 {
     //this test in unstable!! Will break if you're not in the UK

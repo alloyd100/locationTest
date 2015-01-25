@@ -23,6 +23,9 @@ And a couple of helper classes;
   * This class contains the LocationManager delegate methods and methods to generate the location using [CLGeocoder](https://developer.apple.com/library/prerelease/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html).
  * FlagImageManager
   * This class helps me fetch the correct image using ISO-Country codes.
+ * IPAddressManager
+  * This class fetches the users IP address using the REST API available at http://www.telize.com/. 
+  * The application can then check the location found, against the IP address of the user and alert the user if the two locations do not match.
   
 ###Preset Twitter Message
 
