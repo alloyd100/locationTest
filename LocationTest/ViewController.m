@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "LocationManager.h"
+#import <Social/Social.h>
+#import "FlagImageManager.h"
 
 @interface ViewController ()
 
@@ -23,6 +25,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self.loadingIndicator setHidden:YES];
     self.locationManager = [[LocationManager alloc] init];
+    
+    self.TwitterButton.enabled = NO;
 }
 
 
@@ -31,23 +35,53 @@
     [self.loadingIndicator setHidden:NO];
     [self.loadingIndicator startAnimating];
     
-    
-    [self.locationManager startUpdatingLocation];
-    
-//    [self.locationManager :self.flightSearch.managedObjectContext
-//               withCompletionHandler: ^(Airport *closestAirport) {
-//                   if (closestAirport)
-//                   {
-//                       weakSelf.flightSearch.fromAirport = closestAirport;
-//                       [gpsButton setAsFound];
-//                   }
-//                   else
-//                   {
-//                       [gpsButton setAsNotFound];
-//                   }
-//                   [gpsButton stopAnimating];
-//               }];
+    [self.locationManager currentUserLocation:^(BOOL success) {
+        if (success)
+        {
+            [self updateView];
+        }
+        else
+        {
+            [self.loadingIndicator stopAnimating];
+            [self.loadingIndicator setHidden:YES];
+        }
+    }];
 }
+
+-(void)updateView
+{
+    [self.loadingIndicator stopAnimating];
+    [self.loadingIndicator setHidden:YES];
+    
+    self.countryLabel.text = [self.locationManager stringForLocationCountry];
+    self.flagImageView.image = [FlagImageManager flagImageForCountryISOCode:[self.locationManager stringForISOCode]];
+    self.TwitterButton.enabled = YES;
+}
+
+#pragma mark - social sharing
+
+- (IBAction)tweetThis:(id)sender
+{
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        if(![self.countryLabel.text isEqualToString:@"Country"])
+        {
+            [tweetSheet addImage:[FlagImageManager flagImageForCountryISOCode:[self.locationManager stringForISOCode]]];
+            [tweetSheet setInitialText:[NSString stringWithFormat:@"I am currently in %@", [self.locationManager stringForLocationCountry]]];
+        }
+        
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Whoops!" message:@"Please check your internet connection and that you have a twitter account set up" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
+
 
 
 @end

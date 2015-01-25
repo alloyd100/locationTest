@@ -17,61 +17,68 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZJ-Lg-CdR">
-                                <rect key="frame" x="176" y="263" width="248" height="141"/>
+                                <rect key="frame" x="176" y="210" width="248" height="141"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="248" id="WJH-Dw-htG"/>
-                                    <constraint firstAttribute="width" constant="248" id="fwX-LD-YH9"/>
-                                    <constraint firstAttribute="height" constant="141" id="tck-cv-zJj"/>
-                                    <constraint firstAttribute="height" constant="141" id="vsl-hi-OzY"/>
+                                    <constraint firstAttribute="width" constant="248" id="Ofo-gn-xh3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="30"/>
                                 <color key="tintColor" red="0.01176470588" green="0.35686274509999999" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Find Me!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="WJH-Dw-htG"/>
-                                        <exclude reference="vsl-hi-OzY"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <action selector="findMeTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XKT-CF-HYd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="ukf-E8-RnD">
-                                <rect key="frame" x="176" y="28" width="248" height="123"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="123" id="cVz-t1-W4A"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Country Finder" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="ukf-E8-RnD">
+                                <rect key="frame" x="176" y="140" width="248" height="123"/>
                                 <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="40"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="otl-Ka-4JO">
-                                <rect key="frame" x="176" y="127" width="248" height="128"/>
+                                <rect key="frame" x="285" y="108" width="31" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="avM-mg-uD2"/>
+                                    <constraint firstAttribute="width" constant="31" id="okm-oE-Aqb"/>
+                                </constraints>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QsM-ca-MbZ">
-                                <rect key="frame" x="290" y="181" width="20" height="20"/>
+                                <rect key="frame" x="290" y="331" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8r-ng-2fi">
+                                <rect key="frame" x="247" y="387" width="106" height="106"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="XYo-3L-UWQ"/>
+                                    <constraint firstAttribute="height" constant="106" id="qZW-4S-2g5"/>
+                                </constraints>
+                                <state key="normal" image="twitter_icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tweetThis:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KFd-Wc-lLV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="centerX" secondItem="QsM-ca-MbZ" secondAttribute="centerX" id="243-xO-VGb"/>
-                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="trailing" secondItem="ukf-E8-RnD" secondAttribute="trailing" id="4zX-eh-04z"/>
-                            <constraint firstItem="otl-Ka-4JO" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="107" id="CvN-uj-5Gu"/>
-                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="leading" secondItem="ukf-E8-RnD" secondAttribute="leading" id="IHQ-Kj-aCB"/>
-                            <constraint firstItem="ukf-E8-RnD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="MLT-vb-Yng"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="LZJ-Lg-CdR" secondAttribute="bottom" constant="196" id="aRn-9J-0kM"/>
-                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ac2-1s-uUs"/>
-                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="top" secondItem="otl-Ka-4JO" secondAttribute="bottom" constant="8" id="ca3-HZ-sLQ"/>
-                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="trailing" secondItem="otl-Ka-4JO" secondAttribute="trailing" id="eF4-q2-sJZ"/>
-                            <constraint firstItem="QsM-ca-MbZ" firstAttribute="centerY" secondItem="otl-Ka-4JO" secondAttribute="centerY" id="esG-J0-vQG"/>
-                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="top" secondItem="otl-Ka-4JO" secondAttribute="bottom" constant="8" symbolic="YES" id="lDt-7k-abf"/>
-                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="leading" secondItem="otl-Ka-4JO" secondAttribute="leading" id="y7l-wB-Dlz"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Q8r-ng-2fi" secondAttribute="bottom" constant="107" id="8uA-AN-xnw"/>
+                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="leading" secondItem="ukf-E8-RnD" secondAttribute="leading" id="Com-Hv-Ppl"/>
+                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="centerX" secondItem="otl-Ka-4JO" secondAttribute="centerX" id="FC6-LD-E0e"/>
+                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="bottom" secondItem="QsM-ca-MbZ" secondAttribute="bottom" id="QfS-hw-Two"/>
+                            <constraint firstItem="ukf-E8-RnD" firstAttribute="top" secondItem="otl-Ka-4JO" secondAttribute="bottom" constant="8" symbolic="YES" id="TbF-sG-T0e"/>
+                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="top" secondItem="otl-Ka-4JO" secondAttribute="bottom" constant="78" id="aXx-sc-zhf"/>
+                            <constraint firstItem="Q8r-ng-2fi" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="eSI-H8-1Cd"/>
+                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="centerX" secondItem="QsM-ca-MbZ" secondAttribute="centerX" id="oy3-b4-CVz"/>
+                            <constraint firstItem="otl-Ka-4JO" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="88" id="tF1-Qr-xuV"/>
+                            <constraint firstItem="Q8r-ng-2fi" firstAttribute="centerX" secondItem="otl-Ka-4JO" secondAttribute="centerX" id="vhQ-gc-coE"/>
+                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="centerX" secondItem="ukf-E8-RnD" secondAttribute="centerX" id="w58-gc-ruM"/>
+                            <constraint firstItem="Q8r-ng-2fi" firstAttribute="top" secondItem="QsM-ca-MbZ" secondAttribute="bottom" constant="36" id="xgo-cJ-W2o"/>
+                            <constraint firstItem="LZJ-Lg-CdR" firstAttribute="centerX" secondItem="Q8r-ng-2fi" secondAttribute="centerX" id="yZN-O9-D0j"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="TwitterButton" destination="Q8r-ng-2fi" id="oG8-vA-bue"/>
                         <outlet property="countryLabel" destination="ukf-E8-RnD" id="oot-3d-c85"/>
                         <outlet property="flagImageView" destination="otl-Ka-4JO" id="c3U-1b-hLC"/>
                         <outlet property="loadingIndicator" destination="QsM-ca-MbZ" id="p3T-pH-Lcd"/>
@@ -80,7 +87,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="359" y="355"/>
+            <point key="canvasLocation" x="356" y="666"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="twitter_icon.png" width="300" height="300"/>
+    </resources>
 </document>

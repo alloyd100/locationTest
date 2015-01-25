@@ -9,15 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-typedef void (^CurrentLocationCompletionHandler)(BOOL success, CLLocation *location);
+typedef void (^CurrentLocationCompletionHandler)(BOOL success);
 
 @interface LocationManager : NSObject <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property CLLocation *location;
 
-- (void)displayLocationServicesDisabledError;
+- (void)currentUserLocation:(CurrentLocationCompletionHandler)completionHandler;
 - (NSString*)stringForLocationCountry;
-- (void)startUpdatingLocation;
+- (NSString*)stringForISOCode;
 
 @end

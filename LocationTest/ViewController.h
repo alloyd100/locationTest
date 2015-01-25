@@ -13,8 +13,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 @property (weak, nonatomic) IBOutlet UIImageView *flagImageView;
 @property (weak, nonatomic) IBOutlet UILabel *countryLabel;
+@property (weak, nonatomic) IBOutlet UIButton *TwitterButton;
 
 - (IBAction)findMeTouchUpInside:(id)sender;
+- (IBAction)tweetThis:(id)sender;
 
 @end
 
