@@ -34,8 +34,11 @@
     //Send it a location
     CLLocation *location = [[CLLocation alloc]initWithLatitude:10 longitude:10];
     NSArray *locations = @[location];
-    [self.locationManager locationManager:nil didUpdateLocations:locations];
     
+    //simulate three calls of location being updated
+    [self.locationManager locationManager:nil didUpdateLocations:locations];
+    [self.locationManager locationManager:nil didUpdateLocations:locations];
+    [self.locationManager locationManager:nil didUpdateLocations:locations];
     XCTAssertEqualObjects(self.locationManager.location, location);
     
     //clear location manager once used

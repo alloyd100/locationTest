@@ -29,20 +29,20 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
-
-- (void)testLoadingIndicatorStartsAndStopsOnFailedCalls
+- (void)testTwitterButtonDisabledAtStartUp
 {
     [self.viewController viewDidLoad];
     
-    XCTAssertTrue([self.viewController.loadingIndicator isHidden]);
-
-    [self.viewController findMeTouchUpInside:(nil)];
-    
-    XCTAssertFalse([self.viewController.loadingIndicator isHidden]);
+    XCTAssertFalse(self.viewController.TwitterButton.enabled);
 }
+
+- (void)testTwitterButton
+{
+    UIButton *sampleButton = [[UIButton alloc] init];
+    [sampleButton setTitle:@"sample twitter button" forState:UIControlStateNormal];
+    
+    [self.viewController tweetThis:sampleButton];
+}
+
 
 @end

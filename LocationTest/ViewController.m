@@ -67,7 +67,7 @@
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         
-        if(![self.countryLabel.text isEqualToString:@"Country"])
+        if(![self.countryLabel.text isEqualToString:@"Country Finder"])
         {
             [tweetSheet addImage:[FlagImageManager flagImageForCountryISOCode:[self.locationManager stringForISOCode]]];
             [tweetSheet setInitialText:[NSString stringWithFormat:@"I am currently in %@", [self.locationManager stringForLocationCountry]]];
