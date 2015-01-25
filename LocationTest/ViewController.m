@@ -55,6 +55,12 @@
     [self.loadingIndicator setHidden:YES];
     
     self.countryLabel.text = [self.locationManager stringForLocationCountry];
+    
+    if (![self.locationManager ipaddressCountryIsTheSameAsTheLocationCountry])
+    {
+        [self displayLocationDoesntMatchIpAddressAlert];
+    }
+    
     self.flagImageView.image = [FlagImageManager flagImageForCountryISOCode:[self.locationManager stringForISOCode]];
     self.TwitterButton.enabled = YES;
 }
@@ -82,6 +88,15 @@
     }
 }
 
+-(void)displayLocationDoesntMatchIpAddressAlert
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Your IP address does not match the location found"
+                                                    message:[NSString stringWithFormat:@"Your IP address is located in %@. Please check your connection.", [self.locationManager stringForIPAddressCountry]]
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
 
 
 

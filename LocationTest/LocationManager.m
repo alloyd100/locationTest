@@ -7,11 +7,13 @@
 //
 
 #import "LocationManager.h"
+#import "IPAddressManager.h"
 
 
 @interface LocationManager ()
 
 @property NSString *countryName;
+@property NSString *ipAddressCountry;
 @property NSString *isoCountryCode;
 @property int locationGrabCount;
 
@@ -26,9 +28,19 @@
     return self.countryName;
 }
 
+-(NSString*)stringForIPAddressCountry
+{
+    return self.ipAddressCountry;
+}
+
 -(NSString*)stringForISOCode
 {
     return self.isoCountryCode.lowercaseString;
+}
+
+- (BOOL)ipaddressCountryIsTheSameAsTheLocationCountry
+{
+    return [self.ipAddressCountry isEqualToString:self.countryName];
 }
 
 -(void)displayLocationServicesError:(NSString*)error
@@ -71,6 +83,8 @@
             CLPlacemark *placemark = [placemarks lastObject];
             self.countryName = placemark.country;
             self.isoCountryCode = placemark.ISOcountryCode;
+            
+            self.ipAddressCountry = [IPAddressManager countryForIPAddress];
             
             if (self.completionHandler)
             {

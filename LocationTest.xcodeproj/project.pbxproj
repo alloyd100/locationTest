@@ -15,6 +15,8 @@
 		CD0968C71A72AE48005305E5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0968C51A72AE48005305E5 /* LaunchScreen.xib */; };
 		CD0968DE1A72B543005305E5 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0968DD1A72B543005305E5 /* LocationManager.m */; };
 		CD0968DF1A72B543005305E5 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0968DD1A72B543005305E5 /* LocationManager.m */; };
+		CD26A42B1A759DAC00299662 /* IPAddressManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26A42A1A759DAC00299662 /* IPAddressManager.m */; };
+		CD26A42D1A75A0A200299662 /* IPAddressManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26A42C1A75A0A200299662 /* IPAddressManagerTests.m */; };
 		CD47D2461A72BFFB00E59BB4 /* ViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47D2451A72BFFB00E59BB4 /* ViewControllerTests.m */; };
 		CD47D2481A72C22300E59BB4 /* LocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47D2471A72C22300E59BB4 /* LocationTests.m */; };
 		CD47D24B1A75724A00E59BB4 /* twitter_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD47D24A1A75724A00E59BB4 /* twitter_icon.png */; };
@@ -542,6 +544,9 @@
 		CD0968D11A72AE48005305E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD0968DC1A72B543005305E5 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		CD0968DD1A72B543005305E5 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		CD26A4291A759DAC00299662 /* IPAddressManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPAddressManager.h; sourceTree = "<group>"; };
+		CD26A42A1A759DAC00299662 /* IPAddressManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAddressManager.m; sourceTree = "<group>"; };
+		CD26A42C1A75A0A200299662 /* IPAddressManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAddressManagerTests.m; sourceTree = "<group>"; };
 		CD47D2451A72BFFB00E59BB4 /* ViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTests.m; sourceTree = "<group>"; };
 		CD47D2471A72C22300E59BB4 /* LocationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTests.m; sourceTree = "<group>"; };
 		CD47D24A1A75724A00E59BB4 /* twitter_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter_icon.png; path = ../LocationTest/twitter_icon.png; sourceTree = "<group>"; };
@@ -843,6 +848,8 @@
 				CD0968DD1A72B543005305E5 /* LocationManager.m */,
 				CD0968BD1A72AE48005305E5 /* ViewController.h */,
 				CD0968BE1A72AE48005305E5 /* ViewController.m */,
+				CD26A4291A759DAC00299662 /* IPAddressManager.h */,
+				CD26A42A1A759DAC00299662 /* IPAddressManager.m */,
 				CD47D5341A7583E400E59BB4 /* FlagImageManager.h */,
 				CD47D5351A7583E400E59BB4 /* FlagImageManager.m */,
 				CD0968C01A72AE48005305E5 /* Main.storyboard */,
@@ -868,6 +875,7 @@
 				CD47D2451A72BFFB00E59BB4 /* ViewControllerTests.m */,
 				CD47D2471A72C22300E59BB4 /* LocationTests.m */,
 				CD47D5381A75879B00E59BB4 /* FlagImageManagerTests.m */,
+				CD26A42C1A75A0A200299662 /* IPAddressManagerTests.m */,
 				CD0968D01A72AE48005305E5 /* Supporting Files */,
 			);
 			path = LocationTestTests;
@@ -1754,6 +1762,7 @@
 				CD0968BC1A72AE48005305E5 /* AppDelegate.m in Sources */,
 				CD0968B91A72AE48005305E5 /* main.m in Sources */,
 				CD0968DE1A72B543005305E5 /* LocationManager.m in Sources */,
+				CD26A42B1A759DAC00299662 /* IPAddressManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1766,6 +1775,7 @@
 				CD47D5371A7583E400E59BB4 /* FlagImageManager.m in Sources */,
 				CD47D2481A72C22300E59BB4 /* LocationTests.m in Sources */,
 				CD0968DF1A72B543005305E5 /* LocationManager.m in Sources */,
+				CD26A42D1A75A0A200299662 /* IPAddressManagerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
