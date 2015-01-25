@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "ViewController.h"
+#import "LocationManager.h"
 
 @interface ViewControllerTests : XCTestCase
 
@@ -42,6 +43,22 @@
     [sampleButton setTitle:@"sample twitter button" forState:UIControlStateNormal];
     
     [self.viewController tweetThis:sampleButton];
+}
+
+- (void)testAlertDisplayedWhenIPandLocationDoNotMatchAndTextTurnedRed
+{
+    [self.viewController view];
+    
+    LocationManager *locMan = [[LocationManager alloc] init];
+    
+    locMan.ipAddressCountry = @"Ireland";
+    locMan.countryName = @"United Kingdom";
+    
+    self.viewController.locationManager = locMan;
+    
+    [self.viewController updateView];
+    
+    //XCTAssertEqualObjects(self.viewController.countryLabel.textColor, [UIColor redColor]);
 }
 
 

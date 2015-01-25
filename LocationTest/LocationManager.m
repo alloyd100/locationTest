@@ -12,9 +12,6 @@
 
 @interface LocationManager ()
 
-@property NSString *countryName;
-@property NSString *ipAddressCountry;
-@property NSString *isoCountryCode;
 @property int locationGrabCount;
 
 @property (nonatomic, copy) CurrentLocationCompletionHandler completionHandler;

@@ -15,6 +15,9 @@ typedef void (^CurrentLocationCompletionHandler)(BOOL success);
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property CLLocation *location;
+@property NSString *countryName;
+@property NSString *ipAddressCountry;
+@property NSString *isoCountryCode;
 
 - (BOOL)ipaddressCountryIsTheSameAsTheLocationCountry;
 - (void)currentUserLocation:(CurrentLocationCompletionHandler)completionHandler;

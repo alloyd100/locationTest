@@ -7,13 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "LocationManager.h"
 #import <Social/Social.h>
 #import "FlagImageManager.h"
 
 @interface ViewController ()
-
-@property (strong, nonatomic) LocationManager *locationManager;
 
 @end
 
@@ -60,6 +57,10 @@
     {
         [self displayLocationDoesntMatchIpAddressAlert];
     }
+    else
+    {
+        self.countryLabel.textColor = [UIColor blackColor];
+    }
     
     self.flagImageView.image = [FlagImageManager flagImageForCountryISOCode:[self.locationManager stringForISOCode]];
     self.TwitterButton.enabled = YES;
@@ -90,6 +91,8 @@
 
 -(void)displayLocationDoesntMatchIpAddressAlert
 {
+    self.countryLabel.textColor = [UIColor redColor];
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Your IP address does not match the location found"
                                                     message:[NSString stringWithFormat:@"Your IP address is located in %@. Please check your connection.", [self.locationManager stringForIPAddressCountry]]
                                                    delegate:nil
