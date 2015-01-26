@@ -18,7 +18,7 @@
 		CD26A42B1A759DAC00299662 /* IPAddressManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26A42A1A759DAC00299662 /* IPAddressManager.m */; };
 		CD26A42D1A75A0A200299662 /* IPAddressManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26A42C1A75A0A200299662 /* IPAddressManagerTests.m */; };
 		CD47D2461A72BFFB00E59BB4 /* ViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47D2451A72BFFB00E59BB4 /* ViewControllerTests.m */; };
-		CD47D2481A72C22300E59BB4 /* LocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47D2471A72C22300E59BB4 /* LocationTests.m */; };
+		CD47D2481A72C22300E59BB4 /* LocationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47D2471A72C22300E59BB4 /* LocationManagerTests.m */; };
 		CD47D24B1A75724A00E59BB4 /* twitter_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD47D24A1A75724A00E59BB4 /* twitter_icon.png */; };
 		CD47D3441A757FE600E59BB4 /* ad.png in Resources */ = {isa = PBXBuildFile; fileRef = CD47D24D1A757FE600E59BB4 /* ad.png */; };
 		CD47D3451A757FE600E59BB4 /* ad.png in Resources */ = {isa = PBXBuildFile; fileRef = CD47D24D1A757FE600E59BB4 /* ad.png */; };
@@ -548,7 +548,7 @@
 		CD26A42A1A759DAC00299662 /* IPAddressManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAddressManager.m; sourceTree = "<group>"; };
 		CD26A42C1A75A0A200299662 /* IPAddressManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAddressManagerTests.m; sourceTree = "<group>"; };
 		CD47D2451A72BFFB00E59BB4 /* ViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTests.m; sourceTree = "<group>"; };
-		CD47D2471A72C22300E59BB4 /* LocationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTests.m; sourceTree = "<group>"; };
+		CD47D2471A72C22300E59BB4 /* LocationManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManagerTests.m; sourceTree = "<group>"; };
 		CD47D24A1A75724A00E59BB4 /* twitter_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter_icon.png; path = ../LocationTest/twitter_icon.png; sourceTree = "<group>"; };
 		CD47D24D1A757FE600E59BB4 /* ad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ad.png; sourceTree = "<group>"; };
 		CD47D24E1A757FE600E59BB4 /* ae.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ae.png; sourceTree = "<group>"; };
@@ -853,7 +853,6 @@
 				CD47D5341A7583E400E59BB4 /* FlagImageManager.h */,
 				CD47D5351A7583E400E59BB4 /* FlagImageManager.m */,
 				CD0968C01A72AE48005305E5 /* Main.storyboard */,
-				CD0968C31A72AE48005305E5 /* Images.xcassets */,
 				CD0968C51A72AE48005305E5 /* LaunchScreen.xib */,
 				CD0968B61A72AE48005305E5 /* Supporting Files */,
 			);
@@ -873,7 +872,7 @@
 			isa = PBXGroup;
 			children = (
 				CD47D2451A72BFFB00E59BB4 /* ViewControllerTests.m */,
-				CD47D2471A72C22300E59BB4 /* LocationTests.m */,
+				CD47D2471A72C22300E59BB4 /* LocationManagerTests.m */,
 				CD47D5381A75879B00E59BB4 /* FlagImageManagerTests.m */,
 				CD26A42C1A75A0A200299662 /* IPAddressManagerTests.m */,
 				CD0968D01A72AE48005305E5 /* Supporting Files */,
@@ -1156,6 +1155,7 @@
 		CD47D5331A75801200E59BB4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CD0968C31A72AE48005305E5 /* Images.xcassets */,
 				CD47D2491A75720800E59BB4 /* Images */,
 				CD47D24C1A757FE600E59BB4 /* Flag_PNGs */,
 			);
@@ -1773,7 +1773,7 @@
 				CD47D2461A72BFFB00E59BB4 /* ViewControllerTests.m in Sources */,
 				CD47D5391A75879B00E59BB4 /* FlagImageManagerTests.m in Sources */,
 				CD47D5371A7583E400E59BB4 /* FlagImageManager.m in Sources */,
-				CD47D2481A72C22300E59BB4 /* LocationTests.m in Sources */,
+				CD47D2481A72C22300E59BB4 /* LocationManagerTests.m in Sources */,
 				CD0968DF1A72B543005305E5 /* LocationManager.m in Sources */,
 				CD26A42D1A75A0A200299662 /* IPAddressManagerTests.m in Sources */,
 			);

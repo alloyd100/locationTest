@@ -30,6 +30,13 @@
     [super tearDown];
 }
 
+- (void)testLocationManagerSetUp
+{
+    [self.viewController viewDidLoad];
+    
+    XCTAssertNotNil(self.viewController.locationManager);
+}
+
 - (void)testTwitterButtonDisabledAtStartUp
 {
     [self.viewController viewDidLoad];

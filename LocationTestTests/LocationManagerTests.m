@@ -1,6 +1,6 @@
 //
-//  LocationTests.m
-//  LocationTest
+//  LocationManagerTests.m
+//  LocationManagerTest
 //
 //  Created by Andrew Lloyd on 23/01/2015.
 //  Copyright (c) 2015 Andrew Lloyd. All rights reserved.
@@ -11,14 +11,14 @@
 
 #import "LocationManager.h"
 
-@interface LocationTests : XCTestCase
+@interface LocationManagerTests : XCTestCase
 
 @property LocationManager *locationManager;
 @property BOOL downloadComplete;
 
 @end
 
-@implementation LocationTests
+@implementation LocationManagerTests
 
 - (void)setUp {
     [super setUp];
@@ -84,6 +84,26 @@
     [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.5]];
     
     XCTAssertEqualObjects([self.locationManager stringForLocationCountry], @"United Kingdom");
+}
+
+-(void)testISOCodeIsReturnedAsLowerCase
+{
+    self.locationManager.isoCountryCode = @"US";
+    XCTAssertEqualObjects([self.locationManager stringForISOCode], @"us");
+}
+
+-(void)testIPAddressCountryComparisonToLocationCountryTrue
+{
+    self.locationManager.countryName = @"United Kingdom";
+    self.locationManager.ipAddressCountry = @"United Kingdom";
+    XCTAssertTrue([self.locationManager ipaddressCountryIsTheSameAsTheLocationCountry]);
+}
+
+-(void)testIPAddressCountryComparisonToLocationCountryFalse
+{
+    self.locationManager.countryName = @"United Kingdom";
+    self.locationManager.ipAddressCountry = @"United States";
+    XCTAssertFalse([self.locationManager ipaddressCountryIsTheSameAsTheLocationCountry]);
 }
 
 
