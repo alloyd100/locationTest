@@ -26,10 +26,9 @@
     [super tearDown];
 }
 
-- (void)testPerformanceExample
+- (void)testIPAddressCountryFetch
 {
-    //this test in unstable!! Will break if you're not in the UK
-    XCTAssertEqualObjects(@"United Kingdom", [IPAddressManager countryForIPAddress]);
+    XCTAssertNotNil([IPAddressManager countryForIPAddress]);
 }
 
 @end
